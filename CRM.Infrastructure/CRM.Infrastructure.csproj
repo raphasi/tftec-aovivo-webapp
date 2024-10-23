@@ -1,0 +1,64 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <UserSecretsId>7cb74bc1-6fed-4ff9-9491-8d5e293c7c86</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20240620154300_create-database.cs" />
+    <Compile Remove="Migrations\20240620154300_create-database.Designer.cs" />
+    <Compile Remove="Migrations\20240623192910_ajuste_quote_opp.cs" />
+    <Compile Remove="Migrations\20240623192910_ajuste_quote_opp.Designer.cs" />
+    <Compile Remove="Migrations\20240623234426_ajuste_quote_opp2.cs" />
+    <Compile Remove="Migrations\20240623234426_ajuste_quote_opp2.Designer.cs" />
+    <Compile Remove="Migrations\20240624015436_ajuste_order.cs" />
+    <Compile Remove="Migrations\20240624015436_ajuste_order.Designer.cs" />
+    <Compile Remove="Migrations\20240624040014_criar_carrinho_compra.cs" />
+    <Compile Remove="Migrations\20240624040014_criar_carrinho_compra.Designer.cs" />
+    <Compile Remove="Migrations\20240624165539_criar_product_event.cs" />
+    <Compile Remove="Migrations\20240624165539_criar_product_event.Designer.cs" />
+    <Compile Remove="Migrations\20240625020154_ajustes_identity.cs" />
+    <Compile Remove="Migrations\20240625020154_ajustes_identity.Designer.cs" />
+    <Compile Remove="Migrations\20240625165925_ajuste_identity_fullname.cs" />
+    <Compile Remove="Migrations\20240625165925_ajuste_identity_fullname.Designer.cs" />
+    <Compile Remove="Migrations\20240626061825_ajuste_identity_sid.cs" />
+    <Compile Remove="Migrations\20240626061825_ajuste_identity_sid.Designer.cs" />
+    <Compile Remove="Migrations\20240627061101_ajuste_evento_img.cs" />
+    <Compile Remove="Migrations\20240627061101_ajuste_evento_img.Designer.cs" />
+    <Compile Remove="Migrations\20240630022523_ajuste_orderitem.cs" />
+    <Compile Remove="Migrations\20240630022523_ajuste_orderitem.Designer.cs" />
+    <Compile Remove="Migrations\20240702133108_crm_tfcode_db_initial.cs" />
+    <Compile Remove="Migrations\20240702133108_crm_tfcode_db_initial.Designer.cs" />
+    <Compile Remove="Migrations\20241004040411_ajustes.cs" />
+    <Compile Remove="Migrations\20241004040411_ajustes.Designer.cs" />
+    <Compile Remove="Migrations\ApplicationDbContextModelSnapshot.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CRM.Domain\CRM.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.6">
+      <!--<PrivateAssets>all</PrivateAssets>-->
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.6">
+      <!--<PrivateAssets>all</PrivateAssets>-->
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+
+</Project>

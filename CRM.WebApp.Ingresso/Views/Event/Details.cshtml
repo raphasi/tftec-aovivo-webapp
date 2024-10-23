@@ -1,0 +1,47 @@
+﻿@model CRM.WebApp.Ingresso.Models.EventViewModel
+
+@{
+    ViewData["Title"] = "Detalhes do Evento";
+}
+
+<h1>@Model.Name</h1>
+<p>@Model.Description</p>
+<p><strong>Data:</strong> @Model.EventDate?.ToString("dd/MM/yyyy")</p>
+<p><strong>Localização:</strong> @Model.Location</p>
+<p><strong>Preço do Ingresso:</strong> @Model.TicketPrice?.ToString("C")</p>
+
+<br />
+
+<table class="table">
+    <h3>Produtos Disponíveis</h3>
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Descrição</th>
+            <th>Preço</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model.AvailableProducts)
+        {
+            <tr>
+                <td>@product.Name</td>
+                <td>@product.Description</td>
+                <td>@product.Price?.ToString("C")</td>
+                <td>
+                    <a asp-controller="Product" asp-action="Details" asp-route-id="@product.ProductID" class="btn btn-primary">Detalhe do Ingresso</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<form asp-controller="Store" asp-action="AddToCartMultiProduct" method="post">
+    @for (int i = 0; i < @Model.AvailableProducts.Count; i++)
+    {
+        <input type="hidden" name="listProduct" value="@Model.AvailableProducts[@i].ProductID" />
+    }
+    <div class="form-group">
+        <button type="submit" class="btn btn-success">Adicionar produtos ao Carrinho</button>
+    </div>
+</form>
